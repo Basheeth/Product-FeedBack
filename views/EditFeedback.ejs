@@ -1,0 +1,47 @@
+<link href="css/EditFeedback.css" rel="stylesheet" type="text/css" />
+<div id = "root">
+    <div class="feedbackBody">
+        <div onclick="goback()" class="head" >
+            <img src="assets/shared/icon-arrow-left.svg" />Go Back
+        </div>
+        <div class="innerBody">
+             <img class="editImage" src="assets/shared/icon-edit-feedback.svg" />
+             <h1>Editing 'Add a dark theme option</h1>
+             <p class="boldText">Feedback Title</p>
+             <p class="grayText">Add a short, descriptive headline</p>
+             <input id="title" value="<%=i.title%>" class="inputTag" type="text" />
+             <p class="boldText">Category</p>
+             <p class="grayText">Choose a category for your feedback</p>
+             <input id="category" onclick="categorySwitch()" type="text" class="inputTag" value="<%=i.category%>" readonly />
+             <div id="switchCategory">
+                <p onclick="renderCategory(this)" class="words">Feature</p>
+                <p onclick="renderCategory(this)" class="words">UI</p>
+                <p onclick="renderCategory(this)" class="words">UX</p>
+                <p onclick="renderCategory(this)" class="words">Enhancement</p>
+                <p onclick="renderCategory(this)" class="words">Bug</p>
+            </div>
+             <p class="boldText">Update Status</p>
+             <p class="grayText">Change feedback state</p>
+             <input onclick="statusSwitch()" id="stat" type="text" class="inputTag" value="<%=i.status%>" readonly />
+             <div id="switchStatus">
+                <p onclick="renderStatus(this)" class="words">Suggestion</p>
+                <p onclick="renderStatus(this)" class="words">Planned</p>
+                <p onclick="renderStatus(this)" class="words">In-Progress</p>
+                <p onclick="renderStatus(this)" class="words">Live</p>
+             </div>
+             <p class="boldText">Feedback Detail</p>
+             <p class="grayText">Include any specific comments on what should be improved,added,etc.</p>
+             <textarea  id="description"  class="inputTag textArea"><%=i.description%></textarea>
+             <div class="footer">
+                <div onclick="deleteFeedback('<%=i.id%>')" class="deleteButton textCenter">Delete</div>
+                <div onclick="cancel()" class="cancelButton textCenter">Cancel</div>
+                <div onclick="edit('<%=i.id%>')" class="addFeedback textCenter">Add Feedback</div>
+             </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="js/script.js"></script>

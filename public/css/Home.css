@@ -1,0 +1,291 @@
+body{
+    width:100vw;
+    height:100vh;
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.blueColor:hover{
+    background-color: #4661E6;
+}
+
+#root{
+    width:100vw;
+    height:100vh;
+    background-color: #f7f8fd;
+    display: grid;
+    grid-template-columns: 1fr 2fr 7fr 1fr;
+    padding-top:4% ;
+    box-sizing: border-box;
+}
+
+.frontend_mentor{
+    width:100%;
+    grid-column-start: 2;
+}
+
+.frontendHeader{
+    width: 90%;
+    height:20%;
+    background-image: url("../assets/suggestions/desktop/background-header.png");
+    background-size: cover;
+    border-radius: 16px;
+    padding: 10%;
+    box-sizing: border-box;
+    color:white;
+    padding-top: 20%;
+    margin-bottom: 10%;
+}
+
+.sortButtonsDiv{
+    width: 90%;
+    height:20%;
+    background-color: white;
+    border-radius: 16px;
+    margin-bottom: 10%;
+    padding: 10%;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.sortButton{
+    background-color: #F2F4FF;
+    color: #4661E6;
+    border-radius:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:25%;
+}
+
+
+#all,#UI,#UX{
+    width: 23%;
+}
+
+#Enhancement{
+    width: 60%;
+}
+
+#Bug{
+    width:28%;
+}
+
+#Feature{
+    width: 40%;
+}
+
+.roadMap{
+    background-color: white;
+    padding: 10%;
+    box-sizing: border-box;
+    width: 90%;
+    height:20%;
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.roadMapName>h3{
+     margin-top: 0;
+}
+
+.roadMapName > div{
+    display: flex;
+    margin-top: 7%;
+}
+.roadMapName > div>div{
+    margin-top: 3%;
+    margin-right: 10%;
+    width: 9px;
+    height: 9px;
+    border-radius: 100px;
+}
+
+#roadMapView{
+    color:#4661E6;
+    margin-top: 0;
+    margin-left: 10%;
+}
+
+.color1{
+    background-color:#F49F85;
+}
+.color2{
+    background-color: #AD1FEA;
+}
+
+.color3{
+    background-color: #62BCFA;
+}
+
+.greyColor{
+    color:#647196;
+    font-weight: bolder;
+    margin-left: 30%;
+}
+
+.sortButton:hover{
+    background-color: #CFD7FF;
+}
+
+.renderingPage{
+    height: 93vh;
+} 
+
+.header{
+    width:100%;
+    height: 10%;
+    background-color: #373F68;
+    border-radius: 16px ;
+    padding: 1.6%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 5fr 5fr 7fr 5fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.suggestionImage{
+    width: 87%;
+    height:74%;
+}
+
+.suggestionCount{
+    width:100%;
+    font-size: 28px;
+    color:white;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+}
+
+.sort{
+    width: 102%;
+    color: #9298b3;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+
+#sortButton{
+    font-weight: bolder;
+    color:#aab0c8
+}
+
+.addFeedback{
+    width: 100%;
+    height:100%;
+    background-color: #AD1FEA;
+    grid-column-start: 5;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.feedback{
+    width:100%;
+    height:22%;
+    background-color: white;
+    margin-top: 3%;
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: 1fr 8fr 0.5fr;
+    padding: 3%;
+    box-sizing: border-box;
+}
+
+.upVotes{
+    width: 46%;
+    height:54%;
+    background-color: #F2F4FE;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: bolder;
+}
+
+.feedbackDetails{
+    width: 100%;
+}
+
+.feedbackDetails>p{
+    margin-top: 0;
+}
+
+.upVotes > img{
+    width:30%;
+    height:20%
+}
+
+.title{
+    width: 100%;
+    font-size: 22px;
+    font-weight: bolder;
+    margin-bottom: 1.5%;
+}
+
+.description{
+    width: 100%;
+    font-size: 18px;
+    color:#647196;
+    margin-bottom: 2.8%;
+}
+
+.category{
+    padding: 1%;
+    padding-right: 2%;
+    padding-left: 2%;
+    border-radius: 12px;
+    background-color: #F2F4FF;
+    color: #4661E6;
+    font-weight: bolder;
+}
+
+.comments{
+    width:100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.comments > img{
+    width: 50%;
+    margin-right: 25% ;
+}
+
+.dummyRenderingPage{
+    width: 100%;
+    height: 86%;
+    overflow: scroll;
+}
+
+.blueColor{
+    background-color: #4661E6;
+    color:white;
+}
+
+.blueColor:hover{
+    background-color: #4661E6;
+}
+
+.upvotes:hover{
+    background-color: #CFD7FF;
+}
+
+.addFeedback:hover{
+    background-color: #C75AF6;
+}

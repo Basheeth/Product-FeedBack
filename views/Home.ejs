@@ -1,0 +1,80 @@
+<%let sug = 0,live = 0,pro = 0,plan = 0;let blue = "blueColor";
+for(let i of respond){
+    (i.status == 'suggestion')?sug++:(i.status == 'live')?live++:(i.status == 'in-progress')?pro++:plan++;
+}%>
+<link href="css/Home.css" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<div id="root">
+    <div class="frontend_mentor">
+        <div class="frontendHeader" >
+             <h2>Frontend Mentor</h2>
+             <h3>Feedback Board</h3>
+         </div>
+         <div class="sortButtonsDiv">
+              <div onclick="sortByCategory(this.id)" id="all" class="sortButton <%=(selectAllCategory == 'all')?blue:null%>">
+                All
+              </div>
+              <div onclick="sortByCategory(this.id)"  id="UI" class="sortButton <%=(category.includes('UI'))?blue:null%>" >UI</div>
+              <div onclick="sortByCategory(this.id)" id="UX" class="sortButton <%=(category.includes('UX'))?blue:null%>">UX</div>
+              <div onclick="sortByCategory(this.id)" id="Enhancement" class="sortButton <%=(category.includes('Enhancement'))?blue:null%>">Enhancement</div>
+              <div onclick="sortByCategory(this.id)" id="Bug" class="sortButton <%=(category.includes('Bug'))?blue:null%>">Bug</div>
+              <div onclick="sortByCategory(this.id)" id="Feature" class="sortButton <%=(category.includes('Feature'))?blue:null%>">Feature</div>
+         </div>
+         <div class="roadMap">
+            <div class="roadMapName">
+                <h3>Roadmap</h3>
+                <div><div class="color1"></div>Planned</div>
+                <div><div class="color2"></div>In-Progress</div>
+                <div><div class="color3"></div>Live</div>
+            </div>
+            <div>
+                <p onclick="view()" id="roadMapView">View</p>
+                <p class="greyColor"><%=plan%></p>
+                <p class="greyColor"><%=pro%></p>
+                <p class="greyColor"><%=live%></p>
+            </div>
+         </div>
+ 
+     </div>
+     <div class="renderingPage">
+          <div class="header">
+            <img class="suggestionImage" src="assets/suggestions/icon-suggestions.svg" />
+            <div class="suggestionCount">
+                <%=sug%> Suggestions
+            </div>
+            <div onclick="showSortDiv()" class="sort">
+                  Sort by :  <span id="sortButton"> <%=sort%> <img src="assets/shared/icon-arrow-down.svg" /></span>
+            </div>
+            <div onclick="addNewFeedback()" class="addFeedback">
+                + Add Feedback 
+            </div>
+          </div>
+          <div class="dummyRenderingPage">
+          <%for(let i = 0 ; i < respond.length ; i++){%>
+          <div ondblclick="commentsPage(this.id)" id="<%=respond[i].id%>" class="feedback">
+            <div onclick="upvotesIncrease()" class="upVotes">
+                <img src="assets/shared/icon-arrow-up.svg"/>
+                <%=respond[i].upvotes %>
+            </div>
+            <div class="feedbackDetails">
+                <p class="title"><%=respond[i].title%></5></p>
+                <p class="description"><%=respond[i].description%><%=respond.length%></p>
+                <div ><span class="category"><%=respond[i].category.charAt(0).toUpperCase()+""+respond[i].category.substring(1)%></span></div>
+            </div>
+            <div class="comments">
+                 <img src="assets/shared/icon-comments.svg" /> <%=respond[i].commentsCount%>
+            </div>
+          </div>
+          <%}%>
+          </div>
+     </div>
+     <%-include ('./partials/sortButton.ejs');%>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </div>
+ <script src="js/script.js"></script>

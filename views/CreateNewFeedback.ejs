@@ -1,0 +1,38 @@
+<link href="css/CreateNewFeedback.css" rel="stylesheet" type="text/css" />
+<% console.log("rin") %>
+<div id="root">
+      <div class="feedbackWholeBody">
+        <div onclick="goback()" class="header" >
+            <img src="assets/shared/icon-arrow-left.svg" />
+             Go Back
+        </div>
+        <div class="container">
+            <div class="plusImage">
+                +
+            </div>
+            <h1>Create New Feedback</h1>
+            <p class="bold margin">Feedback Title</p>
+            <p class="gray">Add a short, descriptive headline</p>
+            <input id="inputTitle" class="inputTag" type="text"/>
+            <p class="bold">Category</p>
+            <p class="gray">Choose a category for your feedback</p>
+            <input onclick="categorySwitch()" type="text" readonly value="" id ="category" class="inputTag" />
+            <div id="switchCategory">
+                <p onclick="renderCategory(this)" class="word">Feature</p>
+                <p onclick="renderCategory(this)" class="word">Bug</p>
+                <p onclick="renderCategory(this)" class="word">Enhancement</p>
+                <p onclick="renderCategory(this)" class="word">UI</p>
+                <p onclick="renderCategory(this)" class="word">UX</p>
+            </div>
+            <p class="bold">Feedback Detail</p>
+            <p class="gray">Include any specific comments on what should be improved, added, etc.</p>
+            <textarea id="inputDescription" class="textArea"></textarea>
+            <div class="footer">
+                <div onclick="cancelFeedback()" class="cancel">Cancel</div>
+                <div onclick="addFeedback()" class="add">Add Feedback</div>
+            </div>
+        </div>
+      </div>
+</div>
+
+<script src="js/script.js"></script>

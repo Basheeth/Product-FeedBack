@@ -1,0 +1,56 @@
+<link href="css/Roadmap.css" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<%let datas = [["Planned(2)","Ideas prioritized for research"],["In-Progress(3)","Currently being developed"],["Love(1)","Released features"]];%>
+<div id="root">
+  <div class="wholeContainer">
+    <div class="header" >
+       <div class="goback">
+           <div onclick="goback()"><img src="assets/shared/icon-arrow-left.svg" /> Go Back</div>
+           <div class="heading">Roadmap</div>
+       </div>
+       <div onclick="addNewFeedback()" class="addFeedback">
+          + Add Feedback
+       </div>
+    </div>
+    <div class="feedbackTitle">
+        <% for(let i of datas){%>
+        <div>
+            <p class="titleBoldText">
+               <%=i[0]%>
+            </p>
+            <P class="titleNormalText">
+                <%=i[1]%>
+            </P>
+        </div>
+      <%}%>
+      </div>
+      <div class="body">
+        <%let count = 1; for(let j of arr){%>
+         <div class="planned">
+            <%for(let i of j){%>
+            <div id="color<%=count%>" class="feedback">
+                <div class="status"><div class="color<%=count%>  dot"></div><%=i.status%></div>
+                <p class="title"><%=i.title%> </p>
+                <p class="description"> <%=i.description%></p>
+                <div>
+                    <span class="category"> <%=i.category%></span>
+                </div>
+                <div class="footer">
+                    <div class="upvotes">
+                       <img src="assets/shared/icon-arrow-up.svg" /> <%=i.upvotes%>
+                    </div>
+                    <div class="comments">
+                          <img src="assets/shared/icon-comments.svg" /> <%=i.commentsCount%>
+                    </div>
+                </div>
+            </div>
+           <%}%>
+         </div>
+          <%count++}%>
+      </div>
+  </div>
+</div>
+
+
+
+<script src="js/script.js"></script>

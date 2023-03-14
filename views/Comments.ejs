@@ -1,0 +1,88 @@
+<link href="css/Home.css" rel ="stylesheet" type="text/css" />
+<link href="css/Comments.css" rel="stylesheet" type="text/css" />
+<div id="commentsRoot">
+     <div class="wholeContainer">
+        <div class="commentsHeader">
+            <div onclick="goback()">
+                <img src="assets/shared/icon-arrow-left.svg" />
+                 Go Back
+            </div>
+            <div onclick="editFeedback('<%=i.id%>')" class="edit">
+                Edit Feedback
+            </div>
+        </div>
+        <div id="<%=i.id%>" class="feedback">
+            <div class="upVotes">
+                <img src="assets/shared/icon-arrow-up.svg"/>
+                <%=i.upvotes %>
+            </div>
+            <div class="feedbackDetails">
+                <p class="title"><%=i.title%></p>
+                <p class="description"><%=i.description%></p>
+                <div ><span class="category"><%=i.category.charAt(0).toUpperCase()+""+i.category.substring(1)%></span></div>
+            </div>
+            <div class="comments">
+                 <img src="assets/shared/icon-comments.svg" /><%=(i.comments)?JSON.parse(i.comments).length:0%>
+            </div>
+          </div>
+          <div class="commentsContainer">
+              <p class="head">Commments</p>
+              <%for(let j of resp){%>
+              <div class="renderComments">
+                  <div class="userImage">
+                    <img src="<%=j.image%>" />
+                  </div>
+                  <div id="<%=j.commentsID%>" >
+                    <div>
+                    <div class="commentsInnerBody">
+                        <div>
+                            <p class="bold"><%=j.name%></p>
+                            <p id="username" class="gray">@<%=j.username%> </p>
+                        </div>
+                        <div class="reply" onclick="displayCommentReplyBox(this,1)">
+                               Reply
+                        </div>
+                    </div>
+                    <div class="commentsContent gray">
+                        <%=j.content%>
+                    </div>
+                  </div>
+                   <%if(JSON.parse(j.replies).length != 0){
+                    for(let k of JSON.parse(j.replies)){%>
+                    <div class="replies" >
+                        <div>
+                            <img src="<%=k.user.image%>" />
+                            <hr class="hr">
+                        </div>
+                        <div class="replyBody">
+                            <div class="replyHead">
+                                <div>
+                                    <p class="bold"><%=k.user.name%></p>
+                                    <p id="replyUsername" class="gray">@<%=k.user.username%></p>
+                                </div>
+                                <div class="reply" onclick="displayCommentReplyBox(this,2)">
+                                    Reply
+                                </div>
+                            </div>
+                            <div class="replyContent">
+                              <span class="blue"><%=k.replyingTo%></span> <%=k.content%>
+                            </div>
+                        </div>
+                    </div>
+                   <%}}%>
+                   <hr class="endLine">
+                  </div>  
+              </div>
+             <%}%>
+          </div>
+          <div class="addComment">
+             <p class="addCommentHead">Add Comment</p>
+             <textarea class="addcommentText"></textarea>
+             <div class="footerDiv">
+                <div onclick="addComment(this.id)" id="<%=i.id%>" class="postComment">Post Comment</div>
+             </div>
+          </div>
+     </div>
+</div>
+
+<script src="js/script.js"></script>

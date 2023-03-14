@@ -1,0 +1,31 @@
+#sortMainDiv{
+    width: 12%;
+    height: 16%;
+    background-color: #F7F8FD;
+    position: absolute;
+    top: 18%;
+    left: 45%;
+    border-radius: 14px;
+    display: grid;
+    grid-template-rows: repeat(4fr);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: none;
+}
+
+#sortMainDiv>p{
+    margin:0;
+    display: flex;
+    align-items: center;
+    padding-left:11%;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(205, 194, 194, 0.29);
+    color: #647196;
+}
+
+#sortMainDiv>p:hover{
+    color:#AD1FEA;
+}
+
+#sortMainDiv>:last-child{
+    border: none;
+}
